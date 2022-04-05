@@ -16,7 +16,7 @@ namespace LRCH_Database_Prototype
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new FormLRCHPrototype());
         }
     }
 }

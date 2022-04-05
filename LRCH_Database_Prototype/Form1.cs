@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace LRCH_Database_Prototype
 {
-    public partial class Form1 : Form
+    public partial class FormLRCHPrototype : Form
     {
-        public Form1()
+        public FormLRCHPrototype()
         {
             InitializeComponent();
         }
