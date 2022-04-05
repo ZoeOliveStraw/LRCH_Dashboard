@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace LRCH_Database_Prototype
 {
-    public partial class FormLRCHPrototype : Form
+    public partial class PatientDisplay : Form
     {
-        public FormLRCHPrototype()
+        public PatientDisplay()
         {
             InitializeComponent();
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

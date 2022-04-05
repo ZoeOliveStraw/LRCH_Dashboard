@@ -4,10 +4,10 @@ C:\Users\kamri\Source\Repos\LRCH_Dashboard\LRCH_Database_Prototype\bin\Debug\LRC
 C:\Users\kamri\Source\Repos\LRCH_Dashboard\LRCH_Database_Prototype\bin\Debug\System.Data.SqlClient.dll
 C:\Users\kamri\Source\Repos\LRCH_Dashboard\LRCH_Database_Prototype\bin\Debug\System.Data.SqlClient.xml
 C:\Users\kamri\Source\Repos\LRCH_Dashboard\LRCH_Database_Prototype\obj\Debug\LRCH_Database_Prototype.csprojAssemblyReference.cache
-C:\Users\kamri\Source\Repos\LRCH_Dashboard\LRCH_Database_Prototype\obj\Debug\LRCH_Database_Prototype.Form1.resources
 C:\Users\kamri\Source\Repos\LRCH_Dashboard\LRCH_Database_Prototype\obj\Debug\LRCH_Database_Prototype.Properties.Resources.resources
 C:\Users\kamri\Source\Repos\LRCH_Dashboard\LRCH_Database_Prototype\obj\Debug\LRCH_Database_Prototype.csproj.GenerateResource.cache
 C:\Users\kamri\Source\Repos\LRCH_Dashboard\LRCH_Database_Prototype\obj\Debug\LRCH_Database_Prototype.csproj.CoreCompileInputs.cache
 C:\Users\kamri\Source\Repos\LRCH_Dashboard\LRCH_Database_Prototype\obj\Debug\LRCH_Database_Prototype.csproj.CopyComplete
 C:\Users\kamri\Source\Repos\LRCH_Dashboard\LRCH_Database_Prototype\obj\Debug\LRCH_Database_Prototype.exe
 C:\Users\kamri\Source\Repos\LRCH_Dashboard\LRCH_Database_Prototype\obj\Debug\LRCH_Database_Prototype.pdb
+C:\Users\kamri\Source\Repos\LRCH_Dashboard\LRCH_Database_Prototype\obj\Debug\LRCH_Database_Prototype.FormLRCHPrototype.resources
