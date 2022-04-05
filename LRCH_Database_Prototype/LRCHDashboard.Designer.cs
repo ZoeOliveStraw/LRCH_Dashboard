@@ -28,18 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabControlNavigation = new System.Windows.Forms.TabControl();
             this.tabRoomUtil = new System.Windows.Forms.TabPage();
             this.textBoxW4E = new System.Windows.Forms.TextBox();
             this.textBoxW3E = new System.Windows.Forms.TextBox();
             this.textBoxICE = new System.Windows.Forms.TextBox();
             this.textBoxSPE = new System.Windows.Forms.TextBox();
             this.textBoxPE = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.labelW4E = new System.Windows.Forms.Label();
+            this.labelW3E = new System.Windows.Forms.Label();
+            this.labelICE = new System.Windows.Forms.Label();
+            this.labelSPE = new System.Windows.Forms.Label();
+            this.labelPE = new System.Windows.Forms.Label();
             this.textBoxBedDischarging = new System.Windows.Forms.TextBox();
             this.labelEmptyRooms = new System.Windows.Forms.Label();
             this.labelBedsDischarging = new System.Windows.Forms.Label();
@@ -64,20 +64,21 @@
             this.buttonSearch = new System.Windows.Forms.Button();
             this.textBoxPhysicianNo = new System.Windows.Forms.TextBox();
             this.labelPhysicianNo = new System.Windows.Forms.Label();
-            this.tabControl1.SuspendLayout();
+            this.tabControlNavigation.SuspendLayout();
             this.tabRoomUtil.SuspendLayout();
             this.tabPhysicianPatient.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tabControl1
+            // tabControlNavigation
             // 
-            this.tabControl1.Controls.Add(this.tabRoomUtil);
-            this.tabControl1.Controls.Add(this.tabPhysicianPatient);
-            this.tabControl1.Location = new System.Drawing.Point(13, 13);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(775, 425);
-            this.tabControl1.TabIndex = 0;
+            this.tabControlNavigation.Controls.Add(this.tabRoomUtil);
+            this.tabControlNavigation.Controls.Add(this.tabPhysicianPatient);
+            this.tabControlNavigation.Location = new System.Drawing.Point(13, 13);
+            this.tabControlNavigation.Name = "tabControlNavigation";
+            this.tabControlNavigation.SelectedIndex = 0;
+            this.tabControlNavigation.Size = new System.Drawing.Size(775, 425);
+            this.tabControlNavigation.TabIndex = 0;
+            this.tabControlNavigation.Selected += new System.Windows.Forms.TabControlEventHandler(this.TabControlSelected);
             // 
             // tabRoomUtil
             // 
@@ -86,11 +87,11 @@
             this.tabRoomUtil.Controls.Add(this.textBoxICE);
             this.tabRoomUtil.Controls.Add(this.textBoxSPE);
             this.tabRoomUtil.Controls.Add(this.textBoxPE);
-            this.tabRoomUtil.Controls.Add(this.label1);
-            this.tabRoomUtil.Controls.Add(this.label2);
-            this.tabRoomUtil.Controls.Add(this.label3);
-            this.tabRoomUtil.Controls.Add(this.label4);
-            this.tabRoomUtil.Controls.Add(this.label5);
+            this.tabRoomUtil.Controls.Add(this.labelW4E);
+            this.tabRoomUtil.Controls.Add(this.labelW3E);
+            this.tabRoomUtil.Controls.Add(this.labelICE);
+            this.tabRoomUtil.Controls.Add(this.labelSPE);
+            this.tabRoomUtil.Controls.Add(this.labelPE);
             this.tabRoomUtil.Controls.Add(this.textBoxBedDischarging);
             this.tabRoomUtil.Controls.Add(this.labelEmptyRooms);
             this.tabRoomUtil.Controls.Add(this.labelBedsDischarging);
@@ -124,6 +125,7 @@
             this.textBoxW4E.ReadOnly = true;
             this.textBoxW4E.Size = new System.Drawing.Size(45, 20);
             this.textBoxW4E.TabIndex = 27;
+            this.textBoxW4E.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBoxW3E
             // 
@@ -132,6 +134,7 @@
             this.textBoxW3E.ReadOnly = true;
             this.textBoxW3E.Size = new System.Drawing.Size(45, 20);
             this.textBoxW3E.TabIndex = 26;
+            this.textBoxW3E.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBoxICE
             // 
@@ -140,6 +143,7 @@
             this.textBoxICE.ReadOnly = true;
             this.textBoxICE.Size = new System.Drawing.Size(45, 20);
             this.textBoxICE.TabIndex = 25;
+            this.textBoxICE.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBoxSPE
             // 
@@ -148,6 +152,7 @@
             this.textBoxSPE.ReadOnly = true;
             this.textBoxSPE.Size = new System.Drawing.Size(45, 20);
             this.textBoxSPE.TabIndex = 24;
+            this.textBoxSPE.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBoxPE
             // 
@@ -156,51 +161,52 @@
             this.textBoxPE.ReadOnly = true;
             this.textBoxPE.Size = new System.Drawing.Size(45, 20);
             this.textBoxPE.TabIndex = 23;
+            this.textBoxPE.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // label1
+            // labelW4E
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(631, 191);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(45, 13);
-            this.label1.TabIndex = 22;
-            this.label1.Text = "Ward, 4";
+            this.labelW4E.AutoSize = true;
+            this.labelW4E.Location = new System.Drawing.Point(631, 191);
+            this.labelW4E.Name = "labelW4E";
+            this.labelW4E.Size = new System.Drawing.Size(45, 13);
+            this.labelW4E.TabIndex = 22;
+            this.labelW4E.Text = "Ward, 4";
             // 
-            // label2
+            // labelW3E
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(529, 191);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(45, 13);
-            this.label2.TabIndex = 21;
-            this.label2.Text = "Ward, 3";
+            this.labelW3E.AutoSize = true;
+            this.labelW3E.Location = new System.Drawing.Point(529, 191);
+            this.labelW3E.Name = "labelW3E";
+            this.labelW3E.Size = new System.Drawing.Size(45, 13);
+            this.labelW3E.TabIndex = 21;
+            this.labelW3E.Text = "Ward, 3";
             // 
-            // label3
+            // labelICE
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(397, 191);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(75, 13);
-            this.label3.TabIndex = 20;
-            this.label3.Text = "Intensive Care";
+            this.labelICE.AutoSize = true;
+            this.labelICE.Location = new System.Drawing.Point(397, 191);
+            this.labelICE.Name = "labelICE";
+            this.labelICE.Size = new System.Drawing.Size(75, 13);
+            this.labelICE.TabIndex = 20;
+            this.labelICE.Text = "Intensive Care";
             // 
-            // label4
+            // labelSPE
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(278, 191);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(62, 13);
-            this.label4.TabIndex = 19;
-            this.label4.Text = "Semiprivate";
+            this.labelSPE.AutoSize = true;
+            this.labelSPE.Location = new System.Drawing.Point(278, 191);
+            this.labelSPE.Name = "labelSPE";
+            this.labelSPE.Size = new System.Drawing.Size(62, 13);
+            this.labelSPE.TabIndex = 19;
+            this.labelSPE.Text = "Semiprivate";
             // 
-            // label5
+            // labelPE
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(181, 191);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(40, 13);
-            this.label5.TabIndex = 18;
-            this.label5.Text = "Private";
+            this.labelPE.AutoSize = true;
+            this.labelPE.Location = new System.Drawing.Point(181, 191);
+            this.labelPE.Name = "labelPE";
+            this.labelPE.Size = new System.Drawing.Size(40, 13);
+            this.labelPE.TabIndex = 18;
+            this.labelPE.Text = "Private";
             // 
             // textBoxBedDischarging
             // 
@@ -209,6 +215,7 @@
             this.textBoxBedDischarging.ReadOnly = true;
             this.textBoxBedDischarging.Size = new System.Drawing.Size(100, 20);
             this.textBoxBedDischarging.TabIndex = 17;
+            this.textBoxBedDischarging.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // labelEmptyRooms
             // 
@@ -235,6 +242,7 @@
             this.textBoxW4.ReadOnly = true;
             this.textBoxW4.Size = new System.Drawing.Size(45, 20);
             this.textBoxW4.TabIndex = 14;
+            this.textBoxW4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBoxW3
             // 
@@ -243,6 +251,7 @@
             this.textBoxW3.ReadOnly = true;
             this.textBoxW3.Size = new System.Drawing.Size(45, 20);
             this.textBoxW3.TabIndex = 13;
+            this.textBoxW3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBoxIC
             // 
@@ -251,6 +260,7 @@
             this.textBoxIC.ReadOnly = true;
             this.textBoxIC.Size = new System.Drawing.Size(45, 20);
             this.textBoxIC.TabIndex = 12;
+            this.textBoxIC.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBoxSP
             // 
@@ -259,6 +269,7 @@
             this.textBoxSP.ReadOnly = true;
             this.textBoxSP.Size = new System.Drawing.Size(45, 20);
             this.textBoxSP.TabIndex = 11;
+            this.textBoxSP.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBoxP
             // 
@@ -267,6 +278,7 @@
             this.textBoxP.ReadOnly = true;
             this.textBoxP.Size = new System.Drawing.Size(45, 20);
             this.textBoxP.TabIndex = 10;
+            this.textBoxP.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // labelWard4
             // 
@@ -320,6 +332,7 @@
             this.textBoxOccByBed.ReadOnly = true;
             this.textBoxOccByBed.Size = new System.Drawing.Size(100, 20);
             this.textBoxOccByBed.TabIndex = 4;
+            this.textBoxOccByBed.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBoxOccByRoom
             // 
@@ -328,6 +341,7 @@
             this.textBoxOccByRoom.ReadOnly = true;
             this.textBoxOccByRoom.Size = new System.Drawing.Size(100, 20);
             this.textBoxOccByRoom.TabIndex = 3;
+            this.textBoxOccByRoom.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // labelOccByRoomType
             // 
@@ -419,11 +433,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(797, 450);
-            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.tabControlNavigation);
             this.Name = "FormLRCHPrototype";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
-            this.tabControl1.ResumeLayout(false);
+            this.Load += new System.EventHandler(this.Dashboard_Load);
+            this.tabControlNavigation.ResumeLayout(false);
             this.tabRoomUtil.ResumeLayout(false);
             this.tabRoomUtil.PerformLayout();
             this.tabPhysicianPatient.ResumeLayout(false);
@@ -434,7 +448,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabControl tabControlNavigation;
         private System.Windows.Forms.TabPage tabRoomUtil;
         private System.Windows.Forms.TabPage tabPhysicianPatient;
         private System.Windows.Forms.ListBox listBoxPatients;
@@ -465,11 +479,11 @@
         private System.Windows.Forms.TextBox textBoxICE;
         private System.Windows.Forms.TextBox textBoxSPE;
         private System.Windows.Forms.TextBox textBoxPE;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label labelW4E;
+        private System.Windows.Forms.Label labelW3E;
+        private System.Windows.Forms.Label labelICE;
+        private System.Windows.Forms.Label labelSPE;
+        private System.Windows.Forms.Label labelPE;
     }
 }
 

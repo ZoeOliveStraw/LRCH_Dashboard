@@ -50,18 +50,5 @@ namespace LRCH_Database_Prototype.Properties {
                 this["Kamrin_ConnectionString"] = value;
             }
         }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\kamri\\Source\\Repos\\L" +
-            "RCH_Dashboard\\LRCH_Database_Prototype\\LRCHDatabase.mdf;Integrated Security=True")]
-        public string Project_ConnectionString {
-            get {
-                return ((string)(this["Project_ConnectionString"]));
-            }
-            set {
-                this["Project_ConnectionString"] = value;
-            }
-        }
     }
 }
