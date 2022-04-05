@@ -8,5 +8,8 @@
     <Setting Name="Kamrin_ConnectionString" Type="System.String" Scope="User">
       <Value Profile="(Default)">Data Source=LAPTOP-PF1M4VLI\SQLEXPRESS;Initial Catalog=LRCH_Database;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False</Value>
     </Setting>
+    <Setting Name="Project_ConnectionString" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\kamri\Source\Repos\LRCH_Dashboard\LRCH_Database_Prototype\LRCHDatabase.mdf;Integrated Security=True</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
