@@ -30,31 +30,18 @@
         {
             this.tabControlNavigation = new System.Windows.Forms.TabControl();
             this.tabRoomUtil = new System.Windows.Forms.TabPage();
-            this.textBoxW4E = new System.Windows.Forms.TextBox();
-            this.textBoxW3E = new System.Windows.Forms.TextBox();
-            this.textBoxICE = new System.Windows.Forms.TextBox();
-            this.textBoxSPE = new System.Windows.Forms.TextBox();
-            this.textBoxPE = new System.Windows.Forms.TextBox();
             this.labelW4E = new System.Windows.Forms.Label();
             this.labelW3E = new System.Windows.Forms.Label();
             this.labelICE = new System.Windows.Forms.Label();
             this.labelSPE = new System.Windows.Forms.Label();
             this.labelPE = new System.Windows.Forms.Label();
-            this.textBoxBedDischarging = new System.Windows.Forms.TextBox();
             this.labelEmptyRooms = new System.Windows.Forms.Label();
             this.labelBedsDischarging = new System.Windows.Forms.Label();
-            this.textBoxW4 = new System.Windows.Forms.TextBox();
-            this.textBoxW3 = new System.Windows.Forms.TextBox();
-            this.textBoxIC = new System.Windows.Forms.TextBox();
-            this.textBoxSP = new System.Windows.Forms.TextBox();
-            this.textBoxP = new System.Windows.Forms.TextBox();
             this.labelWard4 = new System.Windows.Forms.Label();
             this.labelWard3 = new System.Windows.Forms.Label();
             this.labelIC = new System.Windows.Forms.Label();
             this.labelSP = new System.Windows.Forms.Label();
             this.labelP = new System.Windows.Forms.Label();
-            this.textBoxOccByBed = new System.Windows.Forms.TextBox();
-            this.textBoxOccByRoom = new System.Windows.Forms.TextBox();
             this.labelOccByRoomType = new System.Windows.Forms.Label();
             this.labelOccByBeds = new System.Windows.Forms.Label();
             this.labelOccByRooms = new System.Windows.Forms.Label();
@@ -88,6 +75,19 @@
             this.labelPhysicianNo = new System.Windows.Forms.Label();
             this.labelGeneral = new System.Windows.Forms.Label();
             this.dataGridViewBeds = new System.Windows.Forms.DataGridView();
+            this.labelOccByRoom = new System.Windows.Forms.Label();
+            this.labelOccByBed = new System.Windows.Forms.Label();
+            this.labelBedDischarging = new System.Windows.Forms.Label();
+            this.labelPInput = new System.Windows.Forms.Label();
+            this.labelSPInput = new System.Windows.Forms.Label();
+            this.labelICInput = new System.Windows.Forms.Label();
+            this.labelW3Input = new System.Windows.Forms.Label();
+            this.labelW4Input = new System.Windows.Forms.Label();
+            this.labelPEInput = new System.Windows.Forms.Label();
+            this.labelSPEInput = new System.Windows.Forms.Label();
+            this.labelICEInput = new System.Windows.Forms.Label();
+            this.labelW3EInput = new System.Windows.Forms.Label();
+            this.labelW4EInput = new System.Windows.Forms.Label();
             this.tabControlNavigation.SuspendLayout();
             this.tabRoomUtil.SuspendLayout();
             this.tabPhysicianPatient.SuspendLayout();
@@ -108,33 +108,33 @@
             // 
             // tabRoomUtil
             // 
+            this.tabRoomUtil.Controls.Add(this.labelW4EInput);
+            this.tabRoomUtil.Controls.Add(this.labelW3EInput);
+            this.tabRoomUtil.Controls.Add(this.labelICEInput);
+            this.tabRoomUtil.Controls.Add(this.labelSPEInput);
+            this.tabRoomUtil.Controls.Add(this.labelPEInput);
+            this.tabRoomUtil.Controls.Add(this.labelW4Input);
+            this.tabRoomUtil.Controls.Add(this.labelW3Input);
+            this.tabRoomUtil.Controls.Add(this.labelICInput);
+            this.tabRoomUtil.Controls.Add(this.labelSPInput);
+            this.tabRoomUtil.Controls.Add(this.labelPInput);
+            this.tabRoomUtil.Controls.Add(this.labelBedDischarging);
+            this.tabRoomUtil.Controls.Add(this.labelOccByBed);
+            this.tabRoomUtil.Controls.Add(this.labelOccByRoom);
             this.tabRoomUtil.Controls.Add(this.dataGridViewBeds);
             this.tabRoomUtil.Controls.Add(this.labelGeneral);
-            this.tabRoomUtil.Controls.Add(this.textBoxW4E);
-            this.tabRoomUtil.Controls.Add(this.textBoxW3E);
-            this.tabRoomUtil.Controls.Add(this.textBoxICE);
-            this.tabRoomUtil.Controls.Add(this.textBoxSPE);
-            this.tabRoomUtil.Controls.Add(this.textBoxPE);
             this.tabRoomUtil.Controls.Add(this.labelW4E);
             this.tabRoomUtil.Controls.Add(this.labelW3E);
             this.tabRoomUtil.Controls.Add(this.labelICE);
             this.tabRoomUtil.Controls.Add(this.labelSPE);
             this.tabRoomUtil.Controls.Add(this.labelPE);
-            this.tabRoomUtil.Controls.Add(this.textBoxBedDischarging);
             this.tabRoomUtil.Controls.Add(this.labelEmptyRooms);
             this.tabRoomUtil.Controls.Add(this.labelBedsDischarging);
-            this.tabRoomUtil.Controls.Add(this.textBoxW4);
-            this.tabRoomUtil.Controls.Add(this.textBoxW3);
-            this.tabRoomUtil.Controls.Add(this.textBoxIC);
-            this.tabRoomUtil.Controls.Add(this.textBoxSP);
-            this.tabRoomUtil.Controls.Add(this.textBoxP);
             this.tabRoomUtil.Controls.Add(this.labelWard4);
             this.tabRoomUtil.Controls.Add(this.labelWard3);
             this.tabRoomUtil.Controls.Add(this.labelIC);
             this.tabRoomUtil.Controls.Add(this.labelSP);
             this.tabRoomUtil.Controls.Add(this.labelP);
-            this.tabRoomUtil.Controls.Add(this.textBoxOccByBed);
-            this.tabRoomUtil.Controls.Add(this.textBoxOccByRoom);
             this.tabRoomUtil.Controls.Add(this.labelOccByRoomType);
             this.tabRoomUtil.Controls.Add(this.labelOccByBeds);
             this.tabRoomUtil.Controls.Add(this.labelOccByRooms);
@@ -146,255 +146,153 @@
             this.tabRoomUtil.Text = "Room Utilization";
             this.tabRoomUtil.UseVisualStyleBackColor = true;
             // 
-            // textBoxW4E
-            // 
-            this.textBoxW4E.Location = new System.Drawing.Point(703, 364);
-            this.textBoxW4E.Name = "textBoxW4E";
-            this.textBoxW4E.ReadOnly = true;
-            this.textBoxW4E.Size = new System.Drawing.Size(45, 21);
-            this.textBoxW4E.TabIndex = 27;
-            this.textBoxW4E.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // textBoxW3E
-            // 
-            this.textBoxW3E.Location = new System.Drawing.Point(601, 364);
-            this.textBoxW3E.Name = "textBoxW3E";
-            this.textBoxW3E.ReadOnly = true;
-            this.textBoxW3E.Size = new System.Drawing.Size(45, 21);
-            this.textBoxW3E.TabIndex = 26;
-            this.textBoxW3E.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // textBoxICE
-            // 
-            this.textBoxICE.Location = new System.Drawing.Point(499, 364);
-            this.textBoxICE.Name = "textBoxICE";
-            this.textBoxICE.ReadOnly = true;
-            this.textBoxICE.Size = new System.Drawing.Size(45, 21);
-            this.textBoxICE.TabIndex = 25;
-            this.textBoxICE.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // textBoxSPE
-            // 
-            this.textBoxSPE.Location = new System.Drawing.Point(367, 364);
-            this.textBoxSPE.Name = "textBoxSPE";
-            this.textBoxSPE.ReadOnly = true;
-            this.textBoxSPE.Size = new System.Drawing.Size(45, 21);
-            this.textBoxSPE.TabIndex = 24;
-            this.textBoxSPE.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // textBoxPE
-            // 
-            this.textBoxPE.Location = new System.Drawing.Point(248, 364);
-            this.textBoxPE.Name = "textBoxPE";
-            this.textBoxPE.ReadOnly = true;
-            this.textBoxPE.Size = new System.Drawing.Size(45, 21);
-            this.textBoxPE.TabIndex = 23;
-            this.textBoxPE.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
             // labelW4E
             // 
             this.labelW4E.AutoSize = true;
+            this.labelW4E.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelW4E.Location = new System.Drawing.Point(652, 367);
             this.labelW4E.Name = "labelW4E";
-            this.labelW4E.Size = new System.Drawing.Size(47, 14);
+            this.labelW4E.Size = new System.Drawing.Size(51, 16);
             this.labelW4E.TabIndex = 22;
             this.labelW4E.Text = "Ward, 4";
             // 
             // labelW3E
             // 
             this.labelW3E.AutoSize = true;
+            this.labelW3E.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelW3E.Location = new System.Drawing.Point(550, 367);
             this.labelW3E.Name = "labelW3E";
-            this.labelW3E.Size = new System.Drawing.Size(47, 14);
+            this.labelW3E.Size = new System.Drawing.Size(51, 16);
             this.labelW3E.TabIndex = 21;
             this.labelW3E.Text = "Ward, 3";
             // 
             // labelICE
             // 
             this.labelICE.AutoSize = true;
+            this.labelICE.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelICE.Location = new System.Drawing.Point(418, 367);
             this.labelICE.Name = "labelICE";
-            this.labelICE.Size = new System.Drawing.Size(80, 14);
+            this.labelICE.Size = new System.Drawing.Size(88, 16);
             this.labelICE.TabIndex = 20;
             this.labelICE.Text = "Intensive Care";
             // 
             // labelSPE
             // 
             this.labelSPE.AutoSize = true;
+            this.labelSPE.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelSPE.Location = new System.Drawing.Point(299, 367);
             this.labelSPE.Name = "labelSPE";
-            this.labelSPE.Size = new System.Drawing.Size(68, 14);
+            this.labelSPE.Size = new System.Drawing.Size(76, 16);
             this.labelSPE.TabIndex = 19;
             this.labelSPE.Text = "Semiprivate";
             // 
             // labelPE
             // 
             this.labelPE.AutoSize = true;
+            this.labelPE.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelPE.Location = new System.Drawing.Point(202, 367);
             this.labelPE.Name = "labelPE";
-            this.labelPE.Size = new System.Drawing.Size(43, 14);
+            this.labelPE.Size = new System.Drawing.Size(48, 16);
             this.labelPE.TabIndex = 18;
             this.labelPE.Text = "Private";
-            // 
-            // textBoxBedDischarging
-            // 
-            this.textBoxBedDischarging.Location = new System.Drawing.Point(696, 300);
-            this.textBoxBedDischarging.Name = "textBoxBedDischarging";
-            this.textBoxBedDischarging.ReadOnly = true;
-            this.textBoxBedDischarging.Size = new System.Drawing.Size(52, 21);
-            this.textBoxBedDischarging.TabIndex = 17;
-            this.textBoxBedDischarging.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // labelEmptyRooms
             // 
             this.labelEmptyRooms.AutoSize = true;
+            this.labelEmptyRooms.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelEmptyRooms.Location = new System.Drawing.Point(12, 367);
             this.labelEmptyRooms.Name = "labelEmptyRooms";
-            this.labelEmptyRooms.Size = new System.Drawing.Size(184, 14);
+            this.labelEmptyRooms.Size = new System.Drawing.Size(194, 16);
             this.labelEmptyRooms.TabIndex = 16;
             this.labelEmptyRooms.Text = "# of Empty Rooms by Room Type:";
             // 
             // labelBedsDischarging
             // 
             this.labelBedsDischarging.AutoSize = true;
+            this.labelBedsDischarging.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelBedsDischarging.Location = new System.Drawing.Point(531, 303);
             this.labelBedsDischarging.Name = "labelBedsDischarging";
-            this.labelBedsDischarging.Size = new System.Drawing.Size(159, 14);
+            this.labelBedsDischarging.Size = new System.Drawing.Size(167, 16);
             this.labelBedsDischarging.TabIndex = 15;
             this.labelBedsDischarging.Text = "# of Beds Discharging Today:";
-            // 
-            // textBoxW4
-            // 
-            this.textBoxW4.Location = new System.Drawing.Point(703, 334);
-            this.textBoxW4.Name = "textBoxW4";
-            this.textBoxW4.ReadOnly = true;
-            this.textBoxW4.Size = new System.Drawing.Size(45, 21);
-            this.textBoxW4.TabIndex = 14;
-            this.textBoxW4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // textBoxW3
-            // 
-            this.textBoxW3.Location = new System.Drawing.Point(601, 334);
-            this.textBoxW3.Name = "textBoxW3";
-            this.textBoxW3.ReadOnly = true;
-            this.textBoxW3.Size = new System.Drawing.Size(45, 21);
-            this.textBoxW3.TabIndex = 13;
-            this.textBoxW3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // textBoxIC
-            // 
-            this.textBoxIC.Location = new System.Drawing.Point(499, 334);
-            this.textBoxIC.Name = "textBoxIC";
-            this.textBoxIC.ReadOnly = true;
-            this.textBoxIC.Size = new System.Drawing.Size(45, 21);
-            this.textBoxIC.TabIndex = 12;
-            this.textBoxIC.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // textBoxSP
-            // 
-            this.textBoxSP.Location = new System.Drawing.Point(367, 334);
-            this.textBoxSP.Name = "textBoxSP";
-            this.textBoxSP.ReadOnly = true;
-            this.textBoxSP.Size = new System.Drawing.Size(45, 21);
-            this.textBoxSP.TabIndex = 11;
-            this.textBoxSP.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // textBoxP
-            // 
-            this.textBoxP.Location = new System.Drawing.Point(248, 334);
-            this.textBoxP.Name = "textBoxP";
-            this.textBoxP.ReadOnly = true;
-            this.textBoxP.Size = new System.Drawing.Size(45, 21);
-            this.textBoxP.TabIndex = 10;
-            this.textBoxP.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // labelWard4
             // 
             this.labelWard4.AutoSize = true;
+            this.labelWard4.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelWard4.Location = new System.Drawing.Point(652, 337);
             this.labelWard4.Name = "labelWard4";
-            this.labelWard4.Size = new System.Drawing.Size(47, 14);
+            this.labelWard4.Size = new System.Drawing.Size(54, 16);
             this.labelWard4.TabIndex = 9;
-            this.labelWard4.Text = "Ward, 4";
+            this.labelWard4.Text = "Ward, 4:";
             // 
             // labelWard3
             // 
             this.labelWard3.AutoSize = true;
+            this.labelWard3.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelWard3.Location = new System.Drawing.Point(550, 337);
             this.labelWard3.Name = "labelWard3";
-            this.labelWard3.Size = new System.Drawing.Size(47, 14);
+            this.labelWard3.Size = new System.Drawing.Size(54, 16);
             this.labelWard3.TabIndex = 8;
-            this.labelWard3.Text = "Ward, 3";
+            this.labelWard3.Text = "Ward, 3:";
             // 
             // labelIC
             // 
             this.labelIC.AutoSize = true;
+            this.labelIC.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelIC.Location = new System.Drawing.Point(418, 337);
             this.labelIC.Name = "labelIC";
-            this.labelIC.Size = new System.Drawing.Size(80, 14);
+            this.labelIC.Size = new System.Drawing.Size(91, 16);
             this.labelIC.TabIndex = 7;
-            this.labelIC.Text = "Intensive Care";
+            this.labelIC.Text = "Intensive Care:";
             // 
             // labelSP
             // 
             this.labelSP.AutoSize = true;
+            this.labelSP.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelSP.Location = new System.Drawing.Point(299, 337);
             this.labelSP.Name = "labelSP";
-            this.labelSP.Size = new System.Drawing.Size(68, 14);
+            this.labelSP.Size = new System.Drawing.Size(79, 16);
             this.labelSP.TabIndex = 6;
-            this.labelSP.Text = "Semiprivate";
+            this.labelSP.Text = "Semiprivate:";
             // 
             // labelP
             // 
             this.labelP.AutoSize = true;
+            this.labelP.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelP.Location = new System.Drawing.Point(202, 337);
             this.labelP.Name = "labelP";
-            this.labelP.Size = new System.Drawing.Size(43, 14);
+            this.labelP.Size = new System.Drawing.Size(51, 16);
             this.labelP.TabIndex = 5;
-            this.labelP.Text = "Private";
-            // 
-            // textBoxOccByBed
-            // 
-            this.textBoxOccByBed.Location = new System.Drawing.Point(442, 300);
-            this.textBoxOccByBed.Name = "textBoxOccByBed";
-            this.textBoxOccByBed.ReadOnly = true;
-            this.textBoxOccByBed.Size = new System.Drawing.Size(61, 21);
-            this.textBoxOccByBed.TabIndex = 4;
-            this.textBoxOccByBed.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // textBoxOccByRoom
-            // 
-            this.textBoxOccByRoom.Location = new System.Drawing.Point(202, 300);
-            this.textBoxOccByRoom.Name = "textBoxOccByRoom";
-            this.textBoxOccByRoom.ReadOnly = true;
-            this.textBoxOccByRoom.Size = new System.Drawing.Size(58, 21);
-            this.textBoxOccByRoom.TabIndex = 3;
-            this.textBoxOccByRoom.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.labelP.Text = "Private:";
             // 
             // labelOccByRoomType
             // 
             this.labelOccByRoomType.AutoSize = true;
+            this.labelOccByRoomType.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelOccByRoomType.Location = new System.Drawing.Point(49, 337);
             this.labelOccByRoomType.Name = "labelOccByRoomType";
-            this.labelOccByRoomType.Size = new System.Drawing.Size(147, 14);
+            this.labelOccByRoomType.Size = new System.Drawing.Size(156, 16);
             this.labelOccByRoomType.TabIndex = 2;
             this.labelOccByRoomType.Text = "Occupancy by Room Type: ";
             // 
             // labelOccByBeds
             // 
             this.labelOccByBeds.AutoSize = true;
+            this.labelOccByBeds.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelOccByBeds.Location = new System.Drawing.Point(284, 303);
             this.labelOccByBeds.Name = "labelOccByBeds";
-            this.labelOccByBeds.Size = new System.Drawing.Size(152, 14);
+            this.labelOccByBeds.Size = new System.Drawing.Size(163, 16);
             this.labelOccByBeds.TabIndex = 1;
             this.labelOccByBeds.Text = "Overall Occupancy by Beds: ";
             // 
             // labelOccByRooms
             // 
             this.labelOccByRooms.AutoSize = true;
+            this.labelOccByRooms.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelOccByRooms.Location = new System.Drawing.Point(33, 303);
             this.labelOccByRooms.Name = "labelOccByRooms";
-            this.labelOccByRooms.Size = new System.Drawing.Size(163, 14);
+            this.labelOccByRooms.Size = new System.Drawing.Size(174, 16);
             this.labelOccByRooms.TabIndex = 0;
             this.labelOccByRooms.Text = "Overall Occupancy by Rooms: ";
             // 
@@ -704,10 +602,10 @@
             // labelGeneral
             // 
             this.labelGeneral.AutoSize = true;
-            this.labelGeneral.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelGeneral.Location = new System.Drawing.Point(12, 268);
+            this.labelGeneral.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelGeneral.Location = new System.Drawing.Point(11, 261);
             this.labelGeneral.Name = "labelGeneral";
-            this.labelGeneral.Size = new System.Drawing.Size(160, 16);
+            this.labelGeneral.Size = new System.Drawing.Size(198, 21);
             this.labelGeneral.TabIndex = 28;
             this.labelGeneral.Text = "General Bed Information";
             // 
@@ -715,6 +613,9 @@
             // 
             this.dataGridViewBeds.AllowUserToAddRows = false;
             this.dataGridViewBeds.AllowUserToDeleteRows = false;
+            this.dataGridViewBeds.AllowUserToResizeColumns = false;
+            this.dataGridViewBeds.AllowUserToResizeRows = false;
+            this.dataGridViewBeds.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewBeds.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridViewBeds.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewBeds.GridColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -723,6 +624,149 @@
             this.dataGridViewBeds.ReadOnly = true;
             this.dataGridViewBeds.Size = new System.Drawing.Size(733, 222);
             this.dataGridViewBeds.TabIndex = 29;
+            // 
+            // labelOccByRoom
+            // 
+            this.labelOccByRoom.AutoSize = true;
+            this.labelOccByRoom.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelOccByRoom.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelOccByRoom.Location = new System.Drawing.Point(202, 303);
+            this.labelOccByRoom.Name = "labelOccByRoom";
+            this.labelOccByRoom.Size = new System.Drawing.Size(41, 16);
+            this.labelOccByRoom.TabIndex = 30;
+            this.labelOccByRoom.Text = "label1";
+            // 
+            // labelOccByBed
+            // 
+            this.labelOccByBed.AutoSize = true;
+            this.labelOccByBed.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelOccByBed.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelOccByBed.Location = new System.Drawing.Point(442, 303);
+            this.labelOccByBed.Name = "labelOccByBed";
+            this.labelOccByBed.Size = new System.Drawing.Size(41, 16);
+            this.labelOccByBed.TabIndex = 31;
+            this.labelOccByBed.Text = "label1";
+            // 
+            // labelBedDischarging
+            // 
+            this.labelBedDischarging.AutoSize = true;
+            this.labelBedDischarging.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelBedDischarging.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelBedDischarging.Location = new System.Drawing.Point(696, 303);
+            this.labelBedDischarging.Name = "labelBedDischarging";
+            this.labelBedDischarging.Size = new System.Drawing.Size(41, 16);
+            this.labelBedDischarging.TabIndex = 32;
+            this.labelBedDischarging.Text = "label1";
+            // 
+            // labelPInput
+            // 
+            this.labelPInput.AutoSize = true;
+            this.labelPInput.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPInput.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelPInput.Location = new System.Drawing.Point(251, 337);
+            this.labelPInput.Name = "labelPInput";
+            this.labelPInput.Size = new System.Drawing.Size(41, 16);
+            this.labelPInput.TabIndex = 33;
+            this.labelPInput.Text = "label1";
+            // 
+            // labelSPInput
+            // 
+            this.labelSPInput.AutoSize = true;
+            this.labelSPInput.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSPInput.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelSPInput.Location = new System.Drawing.Point(373, 337);
+            this.labelSPInput.Name = "labelSPInput";
+            this.labelSPInput.Size = new System.Drawing.Size(41, 16);
+            this.labelSPInput.TabIndex = 34;
+            this.labelSPInput.Text = "label1";
+            // 
+            // labelICInput
+            // 
+            this.labelICInput.AutoSize = true;
+            this.labelICInput.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelICInput.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelICInput.Location = new System.Drawing.Point(504, 337);
+            this.labelICInput.Name = "labelICInput";
+            this.labelICInput.Size = new System.Drawing.Size(41, 16);
+            this.labelICInput.TabIndex = 35;
+            this.labelICInput.Text = "label1";
+            // 
+            // labelW3Input
+            // 
+            this.labelW3Input.AutoSize = true;
+            this.labelW3Input.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelW3Input.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelW3Input.Location = new System.Drawing.Point(603, 337);
+            this.labelW3Input.Name = "labelW3Input";
+            this.labelW3Input.Size = new System.Drawing.Size(41, 16);
+            this.labelW3Input.TabIndex = 36;
+            this.labelW3Input.Text = "label1";
+            // 
+            // labelW4Input
+            // 
+            this.labelW4Input.AutoSize = true;
+            this.labelW4Input.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelW4Input.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelW4Input.Location = new System.Drawing.Point(705, 337);
+            this.labelW4Input.Name = "labelW4Input";
+            this.labelW4Input.Size = new System.Drawing.Size(41, 16);
+            this.labelW4Input.TabIndex = 37;
+            this.labelW4Input.Text = "label1";
+            // 
+            // labelPEInput
+            // 
+            this.labelPEInput.AutoSize = true;
+            this.labelPEInput.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPEInput.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelPEInput.Location = new System.Drawing.Point(251, 367);
+            this.labelPEInput.Name = "labelPEInput";
+            this.labelPEInput.Size = new System.Drawing.Size(41, 16);
+            this.labelPEInput.TabIndex = 38;
+            this.labelPEInput.Text = "label1";
+            // 
+            // labelSPEInput
+            // 
+            this.labelSPEInput.AutoSize = true;
+            this.labelSPEInput.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSPEInput.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelSPEInput.Location = new System.Drawing.Point(373, 367);
+            this.labelSPEInput.Name = "labelSPEInput";
+            this.labelSPEInput.Size = new System.Drawing.Size(41, 16);
+            this.labelSPEInput.TabIndex = 39;
+            this.labelSPEInput.Text = "label1";
+            // 
+            // labelICEInput
+            // 
+            this.labelICEInput.AutoSize = true;
+            this.labelICEInput.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelICEInput.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelICEInput.Location = new System.Drawing.Point(504, 367);
+            this.labelICEInput.Name = "labelICEInput";
+            this.labelICEInput.Size = new System.Drawing.Size(41, 16);
+            this.labelICEInput.TabIndex = 40;
+            this.labelICEInput.Text = "label1";
+            // 
+            // labelW3EInput
+            // 
+            this.labelW3EInput.AutoSize = true;
+            this.labelW3EInput.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelW3EInput.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelW3EInput.Location = new System.Drawing.Point(603, 367);
+            this.labelW3EInput.Name = "labelW3EInput";
+            this.labelW3EInput.Size = new System.Drawing.Size(41, 16);
+            this.labelW3EInput.TabIndex = 41;
+            this.labelW3EInput.Text = "label1";
+            // 
+            // labelW4EInput
+            // 
+            this.labelW4EInput.AutoSize = true;
+            this.labelW4EInput.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelW4EInput.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelW4EInput.Location = new System.Drawing.Point(705, 367);
+            this.labelW4EInput.Name = "labelW4EInput";
+            this.labelW4EInput.Size = new System.Drawing.Size(41, 16);
+            this.labelW4EInput.TabIndex = 42;
+            this.labelW4EInput.Text = "label1";
             // 
             // FormLRCHPrototype
             // 
@@ -756,26 +800,13 @@
         private System.Windows.Forms.Label labelOccByBeds;
         private System.Windows.Forms.Label labelOccByRooms;
         private System.Windows.Forms.Label labelP;
-        private System.Windows.Forms.TextBox textBoxOccByBed;
-        private System.Windows.Forms.TextBox textBoxOccByRoom;
         private System.Windows.Forms.Label labelOccByRoomType;
         private System.Windows.Forms.Label labelWard4;
         private System.Windows.Forms.Label labelWard3;
         private System.Windows.Forms.Label labelIC;
         private System.Windows.Forms.Label labelSP;
-        private System.Windows.Forms.TextBox textBoxW4;
-        private System.Windows.Forms.TextBox textBoxW3;
-        private System.Windows.Forms.TextBox textBoxIC;
-        private System.Windows.Forms.TextBox textBoxSP;
-        private System.Windows.Forms.TextBox textBoxP;
         private System.Windows.Forms.Label labelBedsDischarging;
         private System.Windows.Forms.Label labelEmptyRooms;
-        private System.Windows.Forms.TextBox textBoxBedDischarging;
-        private System.Windows.Forms.TextBox textBoxW4E;
-        private System.Windows.Forms.TextBox textBoxW3E;
-        private System.Windows.Forms.TextBox textBoxICE;
-        private System.Windows.Forms.TextBox textBoxSPE;
-        private System.Windows.Forms.TextBox textBoxPE;
         private System.Windows.Forms.Label labelW4E;
         private System.Windows.Forms.Label labelW3E;
         private System.Windows.Forms.Label labelICE;
@@ -805,6 +836,19 @@
         private System.Windows.Forms.Label labelHCN;
         private System.Windows.Forms.DataGridView dataGridViewBeds;
         private System.Windows.Forms.Label labelGeneral;
+        private System.Windows.Forms.Label labelOccByRoom;
+        private System.Windows.Forms.Label labelBedDischarging;
+        private System.Windows.Forms.Label labelOccByBed;
+        private System.Windows.Forms.Label labelW4Input;
+        private System.Windows.Forms.Label labelW3Input;
+        private System.Windows.Forms.Label labelICInput;
+        private System.Windows.Forms.Label labelSPInput;
+        private System.Windows.Forms.Label labelPInput;
+        private System.Windows.Forms.Label labelICEInput;
+        private System.Windows.Forms.Label labelSPEInput;
+        private System.Windows.Forms.Label labelPEInput;
+        private System.Windows.Forms.Label labelW4EInput;
+        private System.Windows.Forms.Label labelW3EInput;
     }
 }
 

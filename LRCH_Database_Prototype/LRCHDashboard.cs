@@ -219,6 +219,11 @@ namespace LRCH_Database_Prototype
                 SqlCommand sqlCommand12 = new SqlCommand(occupiedBedsQuery, cn);
                 int bedsOccupied = Convert.ToInt32(sqlCommand12.ExecuteScalar());
 
+                // Total Beds
+                string totalBedsQuery = "SELECT COUNT(BED_ID) FROM BED";
+                SqlCommand sqlCommmand13 = new SqlCommand(totalBedsQuery, cn);
+                int totalBeds = Convert.ToInt32(sqlCommmand13.ExecuteScalar());
+
                 // Obtains the total empty rooms by type
                 int totalEmptyPRooms = totalPRooms - pRoomsOccupied;
                 int totalEmptySPRooms = totalSPRooms - spRoomsOccupied;
@@ -226,23 +231,25 @@ namespace LRCH_Database_Prototype
                 int totalEmptyW3Rooms = totalW3Rooms - w3RoomsOccupied;
                 int totalEmptyW4Rooms = totalW4Rooms - w4RoomsOccupied;
 
+                int totalRooms = totalPRooms + totalSPRooms + totalICRooms + totalW3Rooms + totalW4Rooms;
+
                 // Updates textboxes related to occupied beds and rooms
-                textBoxOccByRoom.Text = roomsOccupied.ToString();
-                textBoxOccByBed.Text = bedsOccupied.ToString();
+                labelOccByRoom.Text = roomsOccupied.ToString() + "/" + totalRooms.ToString();
+                labelOccByBed.Text = bedsOccupied.ToString() + "/" + totalBeds.ToString();
 
                 // Updates textboxes related to occupied rooms by room type
-                textBoxP.Text = pRoomsOccupied.ToString();
-                textBoxSP.Text = spRoomsOccupied.ToString();
-                textBoxIC.Text = icRoomsOccupied.ToString();
-                textBoxW3.Text = w3RoomsOccupied.ToString();
-                textBoxW4.Text = w4RoomsOccupied.ToString();
+                labelPInput.Text = pRoomsOccupied.ToString() + "/" + totalPRooms.ToString();
+                labelSPInput.Text = spRoomsOccupied.ToString() + "/" + totalSPRooms.ToString();
+                labelICInput.Text = icRoomsOccupied.ToString() + "/" + totalICRooms.ToString();
+                labelW3Input.Text = w3RoomsOccupied.ToString() + "/" + totalW3Rooms.ToString();
+                labelW4Input.Text = w4RoomsOccupied.ToString() + "/" + totalW4Rooms.ToString();
 
                 // Updates textboxes related to empty rooms by room type
-                textBoxPE.Text = totalEmptyPRooms.ToString();
-                textBoxSPE.Text = totalEmptySPRooms.ToString();
-                textBoxICE.Text = totalEmptyICRooms.ToString();
-                textBoxW3E.Text = totalEmptyW3Rooms.ToString();
-                textBoxW4E.Text = totalEmptyW4Rooms.ToString();
+                labelPEInput.Text = totalEmptyPRooms.ToString() + "/" + totalPRooms.ToString(); ;
+                labelSPEInput.Text = totalEmptySPRooms.ToString() + "/" + totalSPRooms.ToString(); ;
+                labelICEInput.Text = totalEmptyICRooms.ToString() + "/" + totalICRooms.ToString(); ;
+                labelW3EInput.Text = totalEmptyW3Rooms.ToString() + "/" + totalW3Rooms.ToString(); ;
+                labelW4EInput.Text = totalEmptyW4Rooms.ToString() + "/" + totalW4Rooms.ToString(); ;
 
                 // Close connection to the database
                 cn.Close();
