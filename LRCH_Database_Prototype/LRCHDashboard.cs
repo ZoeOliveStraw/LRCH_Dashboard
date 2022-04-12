@@ -145,6 +145,20 @@ namespace LRCH_Database_Prototype
                 // Opens a connection to the database
                 cn.Open();
 
+                // Gets all bed information and uses aliases (For the datatable)
+                string selectAllBeds = "SELECT BED_ID AS 'Bed ID', BED_ROOM AS 'Room', BED_BED AS 'Position', " +
+                    "BED_EXTENSION AS 'Extension', BED_ROOM_TYPE AS 'Room Type', BED_IS_FILLED AS 'Is Occupied?' FROM BED";
+                // Creates a new sql command
+                SqlCommand allCommand = new SqlCommand(selectAllBeds, cn);
+                // Need a SQL Data adapter in order to capture all the information (the whole table)
+                SqlDataAdapter sda = new SqlDataAdapter(allCommand);
+                // Create the dataTable
+                DataTable dataTable = new DataTable();
+                // Fill the dataTable
+                sda.Fill(dataTable);
+                // Sets the data grid's data source
+                dataGridViewBeds.DataSource = dataTable;
+
                 // Rooms Occupied
                 string occupiedRoomsQuery = "SELECT COUNT(DISTINCT BED_ROOM) AS ROOMS FROM BED WHERE BED_IS_FILLED = 1;";
                 SqlCommand sqlCommand = new SqlCommand(occupiedRoomsQuery, cn);
