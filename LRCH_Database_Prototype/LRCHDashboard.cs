@@ -1,4 +1,23 @@
-﻿using System;
+﻿/* Authors: DBAS Final Project - Group 4 (Kamrin Aubin, Zoe Straw, Chris Lapp-Benjamin, & Hoang quoc bao Nguyen (Johnny))
+ * Last Modified: April 12, 2022
+ * Lakeridge Community Hospital Manager (LRCH Manager)
+ * Description: Prototype Application for LRCH. Utilizes a Local Database to gather data, format it, and
+ *              display it on the application. Application includes two views/tabs, one for Room Utilization, 
+ *              and the other for Physician-Patients display. Physicians can also update the the patients
+ *              additional notes if need be. Room utilization displays all beds in a table and general bed
+ *              information like overall occupancy, and more.
+ *              
+ *              NOTE: To make this application compatible with your own database on your machine, either change
+ *              "Properties.Settings.Default.Kamrin_ConnectionString;" to your database's location (located
+ *              the project's properties --> settings).
+ *              OR 
+ *              Add your own default settings connection string (located in the project's properties --> settings)
+ *              then change every "Properties.Settings.Default.Kamrin_ConnectionString;" to 
+ *              "Properties.Settings.Default.<yourDBConnectionString>;"
+ * 
+ */
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
