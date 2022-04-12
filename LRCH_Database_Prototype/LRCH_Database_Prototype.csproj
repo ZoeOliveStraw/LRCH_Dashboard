@@ -64,7 +64,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DatabaseConnect.cs" />
     <Compile Include="LRCHDashboard.cs">
       <SubType>Form</SubType>
     </Compile>

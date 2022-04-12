@@ -19,7 +19,7 @@ namespace LRCH_Database_Prototype
         }
 
         /// <summary>
-        /// 
+        /// Handles the View Patients button event when it's clicked
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -34,8 +34,10 @@ namespace LRCH_Database_Prototype
             // Check if physician's number empty
             if (physicianNo == "")
             {
+                // Displays error message
                 MessageBox.Show("Please enter a Physician Number", "Empty Physician Number");
             }
+            // User has enter something
             else
             {
                 try
@@ -71,40 +73,27 @@ namespace LRCH_Database_Prototype
                             firstName = firstNameLetter + firstName.Substring(1, firstName.Length - 1);
                             lastName = lastNameLetter + lastName.Substring(1, lastName.Length - 1);
 
-                            // Includes
+                            // Includes id and full name for each list item
                             string listItem = id + " - " + firstName + " " + lastName;
 
+                            // Adds the patient to the listbox
                             listBoxPatients.Items.Add(listItem);
 
                         }
+                    }
+
+                    // Checks if the physician has no patients
+                    if (listBoxPatients.Items.Count == 0)
+                    {
+                        // Displays message
+                        MessageBox.Show("No Patients Assigned to Physician", "No Patients");
                     }
 
                     // Close the connection
                     cn.Close();
 
                     // Hides the patient info labels, just incase they are visible
-                    labelPatientInfo.Visible = false;
-                    labelName.Visible = false;
-                    labelNameInput.Visible = false;
-                    labelLoc.Visible = false;
-                    labelLocInput.Visible = false;
-                    labelDA.Visible = false;
-                    labelDAInput.Visible = false;
-                    labelDD.Visible = false;
-                    labelDDInput.Visible = false;
-                    labelHCN.Visible = false;
-                    labelHCNInput.Visible = false;
-                    labelSandP.Visible = false;
-                    labelSandPInput.Visible = false;
-                    labelPhone.Visible = false;
-                    labelPhoneInput.Visible = false;
-                    labelFinance.Visible = false;
-                    labelFinanceInput.Visible = false;
-                    labelPatientBed.Visible = false;
-                    labelBedInput.Visible = false;
-                    labelNotes.Visible = false;
-                    textBoxNotes.Visible = false;
-                    buttonNotes.Visible = false;
+                    PatientInfoVisibility(false);
 
                 }
                 catch (Exception ex)
@@ -117,20 +106,24 @@ namespace LRCH_Database_Prototype
         }
 
         /// <summary>
-        /// 
+        /// Handles the event for when the application is loaded
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void Dashboard_Load(object sender, EventArgs e)
         {
+            // Checks if the tab is Room Utilization
             if (tabControlNavigation.SelectedTab.Text == "Room Utilization")
             {
+                // Displays Room Util Information
                 DisplayRoomUtilInfo();
             }
         }
 
         /// <summary>
-        /// 
+        /// Handles the querying of the database to display all bed information.
+        /// Including a data table and general information related to the bed's table
+        /// in the database.
         /// </summary>
         private void DisplayRoomUtilInfo()
         {
@@ -147,7 +140,7 @@ namespace LRCH_Database_Prototype
 
                 // Gets all bed information and uses aliases (For the datatable)
                 string selectAllBeds = "SELECT BED_ID AS 'Bed ID', BED_ROOM AS 'Room', BED_BED AS 'Position', " +
-                    "BED_EXTENSION AS 'Extension', BED_ROOM_TYPE AS 'Room Type', BED_IS_FILLED AS 'Is Occupied?' FROM BED";
+                    "BED_EXTENSION AS 'Extension', BED_ROOM_TYPE AS 'Room Type', BED_IS_FILLED AS 'Is Occupied?' FROM BED;";
                 // Creates a new sql command
                 SqlCommand allCommand = new SqlCommand(selectAllBeds, cn);
                 // Need a SQL Data adapter in order to capture all the information (the whole table)
@@ -220,9 +213,15 @@ namespace LRCH_Database_Prototype
                 int bedsOccupied = Convert.ToInt32(sqlCommand12.ExecuteScalar());
 
                 // Total Beds
-                string totalBedsQuery = "SELECT COUNT(BED_ID) FROM BED";
+                string totalBedsQuery = "SELECT COUNT(BED_ID) FROM BED;";
                 SqlCommand sqlCommmand13 = new SqlCommand(totalBedsQuery, cn);
                 int totalBeds = Convert.ToInt32(sqlCommmand13.ExecuteScalar());
+
+                // Number of beds Discharging
+                string dischargingBedsQuery = "SELECT COUNT(PATIENT_NO) FROM PATIENT WHERE PATIENT_DATE_DISCHARGED BETWEEN '" +
+                    DateTime.Today.ToString() + "' AND '" + DateTime.Today.AddDays(1).AddSeconds(-1).ToString() + "';";
+                SqlCommand sqlCommmand14 = new SqlCommand(dischargingBedsQuery, cn);
+                int dischargedBeds = Convert.ToInt32(sqlCommmand14.ExecuteScalar());
 
                 // Obtains the total empty rooms by type
                 int totalEmptyPRooms = totalPRooms - pRoomsOccupied;
@@ -231,11 +230,13 @@ namespace LRCH_Database_Prototype
                 int totalEmptyW3Rooms = totalW3Rooms - w3RoomsOccupied;
                 int totalEmptyW4Rooms = totalW4Rooms - w4RoomsOccupied;
 
+                // Calculates the total number of rooms
                 int totalRooms = totalPRooms + totalSPRooms + totalICRooms + totalW3Rooms + totalW4Rooms;
 
-                // Updates textboxes related to occupied beds and rooms
+                // Updates textboxes related to occupied beds, rooms, and number of beds discharged in that day
                 labelOccByRoom.Text = roomsOccupied.ToString() + "/" + totalRooms.ToString();
                 labelOccByBed.Text = bedsOccupied.ToString() + "/" + totalBeds.ToString();
+                labelBedDischarging.Text = dischargedBeds.ToString() + "/" + totalBeds.ToString();
 
                 // Updates textboxes related to occupied rooms by room type
                 labelPInput.Text = pRoomsOccupied.ToString() + "/" + totalPRooms.ToString();
@@ -243,13 +244,6 @@ namespace LRCH_Database_Prototype
                 labelICInput.Text = icRoomsOccupied.ToString() + "/" + totalICRooms.ToString();
                 labelW3Input.Text = w3RoomsOccupied.ToString() + "/" + totalW3Rooms.ToString();
                 labelW4Input.Text = w4RoomsOccupied.ToString() + "/" + totalW4Rooms.ToString();
-
-                // Updates textboxes related to empty rooms by room type
-                labelPEInput.Text = totalEmptyPRooms.ToString() + "/" + totalPRooms.ToString(); ;
-                labelSPEInput.Text = totalEmptySPRooms.ToString() + "/" + totalSPRooms.ToString(); ;
-                labelICEInput.Text = totalEmptyICRooms.ToString() + "/" + totalICRooms.ToString(); ;
-                labelW3EInput.Text = totalEmptyW3Rooms.ToString() + "/" + totalW3Rooms.ToString(); ;
-                labelW4EInput.Text = totalEmptyW4Rooms.ToString() + "/" + totalW4Rooms.ToString(); ;
 
                 // Close connection to the database
                 cn.Close();
@@ -262,18 +256,25 @@ namespace LRCH_Database_Prototype
         }
 
         /// <summary>
-        /// 
+        /// Handles event handling when a new tab is selected
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void TabControlSelected(object sender, TabControlEventArgs e)
         {
+            // Checks if the tab is Room Utilization
             if (tabControlNavigation.SelectedTab.Text == "Room Utilization")
             {
+                // Displays Room Utilization Information
                 DisplayRoomUtilInfo();
             }
         }
 
+        /// <summary>
+        /// Handles the event When a patient is double clicked on the Physician-Patient tab
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void PatientDoubleClick(object sender, MouseEventArgs e)
         {
             // Checks if a patient is selected
@@ -281,6 +282,7 @@ namespace LRCH_Database_Prototype
             {
                 try
                 {
+                    // Declare and Initialize required variables for the SqlDataReader
                     int id;
                     string firstName = "";
                     string lastName = "";
@@ -298,6 +300,7 @@ namespace LRCH_Database_Prototype
                     string bed = "";
                     string notes = "";
 
+                    // Concatenation string variables, used for displaying patient info
                     string fullName = "";
                     string location = "";
                     string sAndP = "";
@@ -311,10 +314,10 @@ namespace LRCH_Database_Prototype
                     // Opens a connection to the database
                     cn.Open();
 
-                    // Gets the patient number from listBoxPatients
+                    // Gets the patient number from listBoxPatients items, using the selected item and substringing
                     string patientNo = listBoxPatients.SelectedItem.ToString().Substring(0, 6);
 
-                    string retrievePatient = "SELECT * FROM PATIENT WHERE PATIENT_NO = " + patientNo + ";";
+                    string retrievePatient = "SELECT * FROM PATIENT WHERE PATIENT_NO = '" + patientNo + "';";
                     // Creates a new command using the selction query and database connection
                     SqlCommand sqlCommand = new SqlCommand(retrievePatient, cn);
                     using (SqlDataReader reader = sqlCommand.ExecuteReader())
@@ -376,28 +379,8 @@ namespace LRCH_Database_Prototype
                     MessageBox.Show(ex.Message, "Error with Database");
                 }
 
-                labelPatientInfo.Visible = true;
-                labelName.Visible = true;
-                labelNameInput.Visible = true;
-                labelLoc.Visible = true;
-                labelLocInput.Visible = true;
-                labelDA.Visible = true;
-                labelDAInput.Visible = true;
-                labelDD.Visible = true;
-                labelDDInput.Visible = true;
-                labelHCN.Visible = true;
-                labelHCNInput.Visible = true;
-                labelSandP.Visible = true;
-                labelSandPInput.Visible = true;
-                labelPhone.Visible = true;
-                labelPhoneInput.Visible = true;
-                labelFinance.Visible = true;
-                labelFinanceInput.Visible = true;
-                labelPatientBed.Visible = true;
-                labelBedInput.Visible = true;
-                labelNotes.Visible = true;
-                textBoxNotes.Visible = true;
-                buttonNotes.Visible = true;
+                // Shows the patient info labels, just incase they are invisible
+                PatientInfoVisibility(true);
 
             }
             // Display error message
@@ -408,6 +391,11 @@ namespace LRCH_Database_Prototype
 
         }
 
+        /// <summary>
+        /// Handles the click event when the submit button is pressed for Additional Notes
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void SubmitNotesClick(object sender, EventArgs e)
         {
             try
@@ -415,7 +403,7 @@ namespace LRCH_Database_Prototype
                 // Gets the patient number from listBoxPatients
                 string patientNo = listBoxPatients.SelectedItem.ToString().Substring(0, 6);
                 string notes = textBoxNotes.Text.Trim();
-                string updateQuery = "UPDATE PATIENT SET PATIENT_ADDITIONAL_NOTES = '" + notes + "' WHERE PATIENT_NO = '" + patientNo + "'";
+                string updateQuery = "UPDATE PATIENT SET PATIENT_ADDITIONAL_NOTES = '" + notes + "' WHERE PATIENT_NO = '" + patientNo + "';";
 
                 // Gets the data source for the connection to the database from the properties settings of the project
                 string connectString = Properties.Settings.Default.Kamrin_ConnectionString;
@@ -426,19 +414,55 @@ namespace LRCH_Database_Prototype
                 // Opens a connection to the database
                 cn.Open();
 
+                // Execute the update statement, which adds the additional notes to patient table
                 SqlCommand command = new SqlCommand(updateQuery, cn);
                 command.ExecuteScalar();
 
+                // Display message
                 MessageBox.Show("Patient Notes Updated Successfully", "Additional Notes");
 
+                // Refresh the patient info using the Patient double click event
                 PatientDoubleClick(sender, (MouseEventArgs)e);
 
             }
+            // Catch any exception that may occur
             catch (Exception ex)
             {
+                // Display error message
                 MessageBox.Show(ex.Message, "Error with Database");
             }
             
+        }
+
+        /// <summary>
+        /// Handles the visibility for patient info
+        /// </summary>
+        /// <param name="isVisible">boolean, either false or true</param>
+        private void PatientInfoVisibility(bool isVisible)
+        {
+            // Visibilty settings for patient info
+            labelPatientInfo.Visible = isVisible;
+            labelName.Visible = isVisible;
+            labelNameInput.Visible = isVisible;
+            labelLoc.Visible = isVisible;
+            labelLocInput.Visible = isVisible;
+            labelDA.Visible = isVisible;
+            labelDAInput.Visible = isVisible;
+            labelDD.Visible = isVisible;
+            labelDDInput.Visible = isVisible;
+            labelHCN.Visible = isVisible;
+            labelHCNInput.Visible = isVisible;
+            labelSandP.Visible = isVisible;
+            labelSandPInput.Visible = isVisible;
+            labelPhone.Visible = isVisible;
+            labelPhoneInput.Visible = isVisible;
+            labelFinance.Visible = isVisible;
+            labelFinanceInput.Visible = isVisible;
+            labelPatientBed.Visible = isVisible;
+            labelBedInput.Visible = isVisible;
+            labelNotes.Visible = isVisible;
+            textBoxNotes.Visible = isVisible;
+            buttonNotes.Visible = isVisible;
         }
     }
 }
