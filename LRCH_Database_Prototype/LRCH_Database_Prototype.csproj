@@ -72,12 +72,6 @@
       <DependentUpon>LRCHDashboard.cs</DependentUpon>
     </Compile>
     <Compile Include="Objects\Patient.cs" />
-    <Compile Include="PatientDisplay.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PatientDisplay.Designer.cs">
-      <DependentUpon>PatientDisplay.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="LRCHDashboard.resx">

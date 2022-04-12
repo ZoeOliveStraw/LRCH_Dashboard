@@ -604,6 +604,7 @@
             this.buttonNotes.Text = "Submit";
             this.buttonNotes.UseVisualStyleBackColor = true;
             this.buttonNotes.Visible = false;
+            this.buttonNotes.Click += new System.EventHandler(this.SubmitNotesClick);
             // 
             // labelNameInput
             // 

@@ -82,6 +82,30 @@ namespace LRCH_Database_Prototype
                     // Close the connection
                     cn.Close();
 
+                    // Hides the patient info labels, just incase they are visible
+                    labelPatientInfo.Visible = false;
+                    labelName.Visible = false;
+                    labelNameInput.Visible = false;
+                    labelLoc.Visible = false;
+                    labelLocInput.Visible = false;
+                    labelDA.Visible = false;
+                    labelDAInput.Visible = false;
+                    labelDD.Visible = false;
+                    labelDDInput.Visible = false;
+                    labelHCN.Visible = false;
+                    labelHCNInput.Visible = false;
+                    labelSandP.Visible = false;
+                    labelSandPInput.Visible = false;
+                    labelPhone.Visible = false;
+                    labelPhoneInput.Visible = false;
+                    labelFinance.Visible = false;
+                    labelFinanceInput.Visible = false;
+                    labelPatientBed.Visible = false;
+                    labelBedInput.Visible = false;
+                    labelNotes.Visible = false;
+                    textBoxNotes.Visible = false;
+                    buttonNotes.Visible = false;
+
                 }
                 catch (Exception ex)
                 {
@@ -112,7 +136,6 @@ namespace LRCH_Database_Prototype
         {
             try
             {
-
                 // Gets the data source for the connection to the database from the properties settings of the project
                 string connectString = Properties.Settings.Default.Kamrin_ConnectionString;
 
@@ -332,8 +355,6 @@ namespace LRCH_Database_Prototype
                     MessageBox.Show(ex.Message, "Error with Database");
                 }
 
-
-
                 labelPatientInfo.Visible = true;
                 labelName.Visible = true;
                 labelNameInput.Visible = true;
@@ -364,6 +385,39 @@ namespace LRCH_Database_Prototype
                 MessageBox.Show("Please Select A Patient", "Patient Not Selected");
             }
 
+        }
+
+        private void SubmitNotesClick(object sender, EventArgs e)
+        {
+            try
+            {
+                // Gets the patient number from listBoxPatients
+                string patientNo = listBoxPatients.SelectedItem.ToString().Substring(0, 6);
+                string notes = textBoxNotes.Text.Trim();
+                string updateQuery = "UPDATE PATIENT SET PATIENT_ADDITIONAL_NOTES = '" + notes + "' WHERE PATIENT_NO = '" + patientNo + "'";
+
+                // Gets the data source for the connection to the database from the properties settings of the project
+                string connectString = Properties.Settings.Default.Kamrin_ConnectionString;
+
+                // Creates a new connection to the database
+                SqlConnection cn = new SqlConnection(connectString);
+
+                // Opens a connection to the database
+                cn.Open();
+
+                SqlCommand command = new SqlCommand(updateQuery, cn);
+                command.ExecuteScalar();
+
+                MessageBox.Show("Patient Notes Updated Successfully", "Additional Notes");
+
+                PatientDoubleClick(sender, (MouseEventArgs)e);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error with Database");
+            }
+            
         }
     }
 }
