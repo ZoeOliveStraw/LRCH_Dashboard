@@ -370,6 +370,12 @@ namespace LRCH_Database_Prototype
                             firstName = firstNameLetter + firstName.Substring(1, firstName.Length - 1);
                             lastName = lastNameLetter + lastName.Substring(1, lastName.Length - 1);
 
+                            // This means, the patient has not been discharged
+                            if (dateDischared == "")
+                            {
+                                // Set the date to 'N/A'
+                                dateDischared = "N/A";
+                            }
                         }
                     }
 
